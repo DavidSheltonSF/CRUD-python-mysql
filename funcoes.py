@@ -83,7 +83,7 @@ def cadastrar(nome, email, senha):
         print("Este email já existe!")
 
 
-def login(email, senha):
+def logar(email, senha):
     import mysql.connector
 
     # Inicia a conexão
