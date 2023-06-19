@@ -1,29 +1,7 @@
-import mysql.connector
+import funcoes
 
-conexao = mysql.connector.connect(
-    host ='localhost',
-    user='root',
-    password='1234',
-    database='bdyoutube'
-)
+funcoes.cadastrar('Dimy', 'dimcarlos@gmail.com', '5587823')
 
-cursor = conexao.cursor()
+# funcoes.login('dimcarlos@gmail.com', '5587823')
 
-comando = """INSERT INTO bdyoutube.Vendas
-        (
-            nome_produto,
-            valor
-        )
-        VALUES
-        (
-            'shampoo anticaspa',
-            90.5
-        );
-    """
-
-cursor.execute(comando)
-
-conexao.commit()
-# Fechar cursor e conexão
-cursor.close()
-conexao.close()
+#print(funcoes.email_existe('dimcarlos@gmail.com'))
