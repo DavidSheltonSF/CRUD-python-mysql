@@ -1,3 +1,15 @@
+# Para que o código funcionasse sem erros eu precisei criar um novo usuário:
+"""
+DROP USER 'userdavid';
+CREATE USER 'userdavid'@'%' IDENTIFIED 
+WITH mysql_native_password  BY '1234';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, 
+RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, 
+CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, 
+REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, 
+CREATE USER, EVENT, TRIGGER ON *.* TO 'userdavid'@'%' WITH GRANT OPTION;
+"""
+
 def email_existe(email) -> bool:
     import mysql.connector
 
@@ -116,3 +128,5 @@ def logar(email, senha):
     
     cursor.close()
     conexao.close()
+
+email_existe("dav@gmail.com")
